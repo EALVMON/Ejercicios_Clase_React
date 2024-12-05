@@ -33,7 +33,7 @@ const addToCart = (item) => {
         <ul>
           {cart.map((item, index) => (
             <li key={index}>
-              {item.nombre} - ${item.precio.toFixed(2)}
+              {item.nombre} - {item.precio.toFixed(2)}€
             </li>
           ))}
         </ul>

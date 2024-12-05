@@ -18,7 +18,7 @@ function Lecturajson() {
     fetchItems ();
   }, []);
 
-// Vamos añadir los articulos al carrito
+// Añadimos los articulos al carrito
 const addToCart = (item) => {
   setCart((prevCart) => [...prevCart, item]);
 };

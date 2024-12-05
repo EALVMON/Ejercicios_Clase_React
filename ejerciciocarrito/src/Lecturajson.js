@@ -30,6 +30,7 @@ const addToCart = (item) => {
       {cart.length === 0 ? (
         <p>El carrito está vacío</p>
       ) : (
+        <>
         <ul>
           {cart.map((item, index) => (
             <li key={index}>
@@ -37,6 +38,7 @@ const addToCart = (item) => {
             </li>
           ))}
         </ul>
+        </>
       )}
       <button onClick={() => setShowCart(false)}>Cerrar</button> {/* para controlar si se ve o no el carrito  cuando da a cerra lo pongo en false*/}
     </div>
@@ -49,9 +51,8 @@ const addToCart = (item) => {
       <ul>
         {items.map(item => (
           <li key={item.id}>
-            <strong>{item.nombre} </strong>:  {item.descripcion} - {item.precio.toFixed(2)}€....... 
-            
-           {/* <button onClick={() => console.log(`Añadido al carrito: {item.nombre}`)}> Añadir al carrito </button> */}
+            <strong>{item.nombre} </strong>:
+            <p>{item.descripcion} - {item.precio.toFixed(2)} €</p>   
             <button onClick={() => addToCart(item)}>Añadir al carrito</button> {/*Cuando presiona añade el item al array cart */}
           </li>
         ))}

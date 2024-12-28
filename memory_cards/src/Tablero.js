@@ -12,9 +12,12 @@ function Tablero() {
     const intervalId = useRef(null);
     const executedTimes = useRef(0);
     const [msgWin, setMsgWin] = useState("");
+    const flagInterval = useRef(false);
     const initCards = () => { // esto va a crear una lista con las imagenes
         let aux = [] // creamos una variable con let mejor que ocupa menos y creamos un array uxiliar
         // ya que no podemos trabajar directamente sobre setCartList 
+    
+
 
         aux.push({ id: 0, state: 0, imagen: './As_de_Bastos.jpg' }); // aqui vamos a crear la primera carta, le damos un id, le damos un estado en este caso 0 para cuando este dada la vuelta, y la url donde esta            
         aux.push({ id: 1, state: 0, imagen: './As_de_Copas.jpg' });
@@ -34,8 +37,17 @@ function Tablero() {
 
 
     }
+
+    const init = () => {
+        initCards();
+        setMsgWin("");
+       // if (executedTimes!=undefined) executedTimes= 0;
+
+    }
     const flip = (index) => { //recibe d eentrada el id
+
         if (flippedCards.current != undefined) {
+            if (cardList[index].state == 1 || flagInterval.current) return;
             if (flippedCards.current.length == 0) {
                 flippedCards.current.push(cardList[index]);
                 cardList[index].state = 1;
@@ -49,8 +61,10 @@ function Tablero() {
                         cardList.map((card) => { if (card.id == paramid) card.state = 0 })
                         setCardList([...cardList]);
                         executedTimes.current = 1;
+                        flagInterval.current=false;
                     };
                     executedTimes.current = 0;
+                    flagInterval.current=true;
                     intervalId.current = setInterval(fIntervalId, 1000, flippedCards.current[0].id);
                 }
                 cardList[index].state = 1;
@@ -73,7 +87,12 @@ function Tablero() {
         }
         if (cardList.length > 0) {
             var flag = true;
-            cardList.map((card) => { if (card.state == 0) { flag = false; return } });
+            cardList.map((card) => {
+                 if (card.state == 0) { 
+                    flag = false; 
+                    //break;
+                 } 
+                });
             if (flag) setMsgWin("Felicidadessssssssssssssssss Has Ganado");
         }
         else {
@@ -85,7 +104,7 @@ function Tablero() {
         // luego por cada carta con jsx nos creamos un con¡mponente card 
         // por cada uno de los elementos devolvemos un <card></card> cuya key va ser card.id
         // luego del key le pasamos el componente card con el data
-        <> {msgWin.length > 1 && <Mensaje texto={msgWin} />}
+        <> {msgWin.length > 1 && <Mensaje texto={msgWin} handler={init}/>}
 
             <div className='container'>
                 <div className='row'>

@@ -3,25 +3,25 @@ import React, { useState, useEffect } from 'react';
 function Lecturajson() {
   const [items, setItems] = useState([]);
 
-  const [cart, setCart] = useState([]); 
-  const [showCart, setShowCart] = useState(false); 
+  const [cart, setCart] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
 
-// lectrura de los datos del Fichero json
+  // lectrura de los datos del Fichero json
   useEffect(() => {
-    const fetchItems  = async () => {
+    const fetchItems = async () => {
       const response = await fetch('./articulos_navideños.json');
       const data = await response.json();
       setItems(data);
     };
 
-    fetchItems ();
+    fetchItems();
   }, []);
 
-// Añadimos los articulos al carrito
-const addToCart = (item) => {
-  setCart((prevCart) => [...prevCart, item]);
-};
+  // Añadimos los articulos al carrito
+  const addToCart = (item) => {
+    setCart((prevCart) => [...prevCart, item]);
+  };
 
   // Renderiza los artículos en el carrito
   const renderCart = () => (
@@ -31,13 +31,13 @@ const addToCart = (item) => {
         <p>El carrito está vacío</p>
       ) : (
         <>
-        <ul>
-          {cart.map((item, index) => (
-            <li key={index}>
-              {item.nombre} - {item.precio.toFixed(2)}€
-            </li>
-          ))}
-        </ul>
+          <ul>
+            {cart.map((item, index) => (
+              <li key={index}>
+                {item.nombre} - {item.precio.toFixed(2)}€
+              </li>
+            ))}
+          </ul>
         </>
       )}
       <button onClick={() => setShowCart(false)}>Cerrar</button> {/* para controlar si se ve o no el carrito  cuando da a cerra lo pongo en false*/}
@@ -52,7 +52,7 @@ const addToCart = (item) => {
         {items.map(item => (
           <li key={item.id}>
             <strong>{item.nombre} </strong>:
-            <p>{item.descripcion} - {item.precio.toFixed(2)} €</p>   
+            <p>{item.descripcion} - {item.precio.toFixed(2)} €</p>
             <button onClick={() => addToCart(item)}>Añadir al carrito</button> {/*Cuando presiona añade el item al array cart */}
           </li>
         ))}
@@ -62,6 +62,6 @@ const addToCart = (item) => {
     </div>
   );
 
-} 
+}
 
-  export default Lecturajson;
+export default Lecturajson;

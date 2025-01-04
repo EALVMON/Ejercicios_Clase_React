@@ -19,14 +19,14 @@ function Tablero() {
     
 
 
-        aux.push({ id: 0, state: 0, imagen: './As_de_Bastos.jpg' }); // aqui vamos a crear la primera carta, le damos un id, le damos un estado en este caso 0 para cuando este dada la vuelta, y la url donde esta            
-        aux.push({ id: 1, state: 0, imagen: './As_de_Copas.jpg' });
-        aux.push({ id: 2, state: 0, imagen: './As_de_Espadas.jpg' });
-        aux.push({ id: 3, state: 0, imagen: './As_de_Oros.jpg' });
-        aux.push({ id: 4, state: 0, imagen: './As_de_Bastos.jpg' });
-        aux.push({ id: 5, state: 0, imagen: './As_de_Copas.jpg' });
-        aux.push({ id: 6, state: 0, imagen: './As_de_Espadas.jpg' });
-        aux.push({ id: 7, state: 0, imagen: './As_de_Oros.jpg' });
+        aux.push({ id: 0, state: 0, imagen: './AMPI.jpg' }); // aqui vamos a crear la primera carta, le damos un id, le damos un estado en este caso 0 para cuando este dada la vuelta, y la url donde esta            
+        aux.push({ id: 1, state: 0, imagen: './ANA.jpg' });
+        aux.push({ id: 2, state: 0, imagen: './INES.jpg' });
+        aux.push({ id: 3, state: 0, imagen: './CRIS.jpg' });
+        aux.push({ id: 4, state: 0, imagen: './AMPI.jpg' });
+        aux.push({ id: 5, state: 0, imagen: './ANA.jpg' });
+        aux.push({ id: 6, state: 0, imagen: './INES.jpg' });
+        aux.push({ id: 7, state: 0, imagen: './CRIS.jpg' });
         //setCardList(aux); // para poder ver lo que tenemos
         // lo que hizo la profe para el ramdon
         //let arr = [0,1,2,3,4,5,6,7]

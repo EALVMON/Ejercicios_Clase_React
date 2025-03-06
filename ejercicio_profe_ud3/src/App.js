@@ -64,6 +64,7 @@ function App() {
             <h4>{pelicula.titulo}</h4>
             <ListGroup>
               <ListGroup.Item>Director: {pelicula.director}</ListGroup.Item>
+              <ListGroup.Item>Actores - {pelicula.actoresPrincipales}</ListGroup.Item>
               <ListGroup.Item>Sinopsis: {pelicula.sinopsis}</ListGroup.Item>
             </ListGroup>
           </Col>

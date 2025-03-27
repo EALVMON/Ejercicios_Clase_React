@@ -1,15 +1,18 @@
 
 import './App.css';
-import { Container, Row, Col } from 'react-bootstrap';
+//import { Container, Row, Col } from 'react-bootstrap';
 import Grid from './gridSystem';
 import MyGrid from './Ejemplo1Grid';
 import MyGrid2 from './EjemploGrid2';
 import BasicStack from './Stacks';
 import HorizontalMarginStartExample from './Stack2';
-import EjemploStack from './Stack3';
-
-
-
+//import EjemploStack from './Stack3';
+import TypesExample from './componentes/botones';
+import ProductCard from './componentes/card';
+import BasicExample from './componentes/accordionEj1';
+import AllCollapseExample from './componentes/accordionE2';
+import NavbarSimple from './componentes/navBarSimple'
+import MyNavbar from './componentes/navbarCollapsed';
 
 function App() {
 
@@ -23,7 +26,7 @@ function App() {
       </head>
 
       <body class="p-4">
-        <div class="container">
+        <div class="bg-warning container">
           <h2 class="mb-4">Ejemplo de Espaciado en Bootstrap Profesora</h2>
           <div class="bg-danger text-white  m-3">Este elemento tiene un margen de 3rem en todos los lados.</div>
           <div class="bg-primary text-white p-2">Este elemento tiene un relleno de 2rem en todos los lados.</div>
@@ -63,12 +66,17 @@ function App() {
             Padding en todos los lados (p) responsivo
           </div>
         </div>
-
+      <NavbarSimple/>
+      <MyNavbar/>
       <Grid></Grid>
       <MyGrid/>
       <MyGrid2/>
       <BasicStack/>
       <HorizontalMarginStartExample/>
+      <TypesExample/>
+      <ProductCard/>
+     <BasicExample/>
+     <AllCollapseExample/>
      
      
      
